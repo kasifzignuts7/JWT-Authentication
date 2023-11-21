@@ -42,6 +42,10 @@ npm start
 
 Visit `http://localhost:3000` in your browser to interact with the JWT authentication demo. The application provides routes for signup, login, and a protected homepage.
 
+## Screenshots
+
+![Local Image](<./screenshots/Authentication%20Cycle%20(2).png>)
+
 ## Usage and Testing
 
 1. Click on the signup button to register.
@@ -53,4 +57,3 @@ Visit `http://localhost:3000` in your browser to interact with the JWT authentic
 ## Conclusion
 
 Feel free to explore, modify, and enhance the code for your specific requirements. Happy coding!
-
