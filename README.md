@@ -2,6 +2,40 @@
 
 Welcome to the JWT Authentication with Express and MongoDB project! This repository contains a Node.js application demonstrating how to implement JSON Web Token (JWT) authentication. Follow the steps below to set up and run the project.
 
+## About this Project
+
+This project presents a straightforward authentication system utilizing JSON Web Tokens (JWT) for user authentication. It provides insights into real-world authentication scenarios, illustrating the communication between clients and servers using JWT tokens. Additionally, the project demonstrates the process of token signing and verification on the server side.
+
+### Screenshots
+
+#### Description:
+
+- This is a snapshot gives us broad picture of how authentication works in action.
+
+![Local Image](<./screenshots/Authentication%20Cycle%20(2).png>)
+
+#### Homepage:
+
+![Local Image](./screenshots/Homepage.png)
+
+#### Signup page:
+
+![Local Image](<./screenshots/Signup Page.png>)
+
+#### Login page:
+
+![Local Image](<./screenshots/Login Page.png>)
+
+## Technologies Used
+
+This project leverages a variety of technologies to achieve its goals. Some of the key technologies include:
+
+- **Node.js**
+- **Express**
+- **MongoDB**
+- **JSON Web Tokens (JWT)**
+- **EJS**
+
 ## Clone the Repository
 
 Clone the Git repository to your local machine:
@@ -41,10 +75,6 @@ npm start
 ```
 
 Visit `http://localhost:3000` in your browser to interact with the JWT authentication demo. The application provides routes for signup, login, and a protected homepage.
-
-## Screenshots
-
-![Local Image](<./screenshots/Authentication%20Cycle%20(2).png>)
 
 ## Usage and Testing
 
