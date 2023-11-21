@@ -6,26 +6,6 @@ Welcome to the JWT Authentication with Express and MongoDB project! This reposit
 
 This project presents a straightforward authentication system utilizing JSON Web Tokens (JWT) for user authentication. It provides insights into real-world authentication scenarios, illustrating the communication between clients and servers using JWT tokens. Additionally, the project demonstrates the process of token signing and verification on the server side.
 
-### Screenshots
-
-#### Description:
-
-- This is a snapshot gives us broad picture of how authentication works in action.
-
-![Local Image](<./screenshots/Authentication%20Cycle%20(2).png>)
-
-#### Homepage:
-
-![Local Image](./screenshots/Homepage.png)
-
-#### Signup page:
-
-![Local Image](<./screenshots/Signup Page.png>)
-
-#### Login page:
-
-![Local Image](<./screenshots/Login Page.png>)
-
 ## Technologies Used
 
 This project leverages a variety of technologies to achieve its goals. Some of the key technologies include:
@@ -83,6 +63,26 @@ Visit `http://localhost:3000` in your browser to interact with the JWT authentic
 3. Open the developer tools in your browser and navigate to Application -> Storage -> Cookies to view the JWT token.
 4. Even after closing the tab or browser, you'll remain logged in, demonstrating the token's persistence.
 5. To logout, click on the logout button. This will clear the JWT token from your cookie and redirect you to the homepage.
+
+### Screenshots
+
+#### Description:
+
+- This is a snapshot gives us broad picture of how authentication works in action.
+
+![Local Image](<./screenshots/Authentication%20Cycle%20(2).png>)
+
+#### Homepage:
+
+![Local Image](./screenshots/Homepage.png)
+
+#### Signup page:
+
+![Local Image](<./screenshots/Signup Page.png>)
+
+#### Login page:
+
+![Local Image](<./screenshots/Login Page.png>)
 
 ## Conclusion
 
