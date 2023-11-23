@@ -1,20 +1,20 @@
-# JWT-Authentication in Node JS with Express and MongoDB
+# JWT-Authentication in MERN Stack
 
-Welcome to the JWT Authentication with Express and MongoDB project! This repository contains a Node.js application demonstrating how to implement JSON Web Token (JWT) authentication. Follow the steps below to set up and run the project.
+Welcome to the JWT Authentication with MERN Stack project. Follow the steps below to set up and run the project.
 
 ## About this Project
 
-This project presents a straightforward authentication system utilizing JSON Web Tokens (JWT) for user authentication. It provides insights into real-world authentication scenarios, illustrating the communication between clients and servers using JWT tokens. Additionally, the project demonstrates the process of token signing and verification on the server side.
+This project presents a straightforward authentication system utilizing JSON Web Tokens (JWT) for user authentication. It provides insights into real-world authentication scenarios using MERN Stack. Additionally, the project demonstrates the process of token signing and verification on the server side.
 
 ## Technologies Used
 
 This project leverages a variety of technologies to achieve its goals. Some of the key technologies include:
 
+- **React.js**
 - **Node.js**
 - **Express**
 - **MongoDB**
 - **JSON Web Tokens (JWT)**
-- **EJS**
 
 ## Clone the Repository
 
@@ -34,11 +34,10 @@ npm install
 
 This will generate a "node_modules" folder in your root directory.
 
-## Project Structure
-
-- The "public" and "views" folders contain static files, such as EJS templates and images.
-
-- Open the `index.js` file to explore the project logic and make necessary configurations.
+```bash
+cd client
+npm install
+```
 
 ## Configuration
 
@@ -50,16 +49,24 @@ This will generate a "node_modules" folder in your root directory.
 
 After configuring the application, run the following command:
 
+For server:
+
+```bash
+nodemon index.js
+```
+
+For client:
+
 ```bash
 npm start
 ```
 
-Visit `http://localhost:3000` in your browser to interact with the JWT authentication demo. The application provides routes for signup, login, and a protected homepage.
+Visit `http://localhost:3000` in your browser to interact with the JWT authentication demo. The application provides routes for authentication and protected page.
 
 ## Usage and Testing
 
-1. Click on the signup button to register.
-2. Once registered, you will be redirected to the homepage.
+1. Click on the submit button to authenticate.
+2. Once authenticated, you will be redirected to the private page.
 3. Open the developer tools in your browser and navigate to Application -> Storage -> Cookies to view the JWT token.
 4. Even after closing the tab or browser, you'll remain logged in, demonstrating the token's persistence.
 5. To logout, click on the logout button. This will clear the JWT token from your cookie and redirect you to the homepage.
@@ -76,13 +83,9 @@ Visit `http://localhost:3000` in your browser to interact with the JWT authentic
 
 ![Local Image](./screenshots/Homepage.png)
 
-#### Signup page:
+#### Private page:
 
-![Local Image](<./screenshots/Signup Page.png>)
-
-#### Login page:
-
-![Local Image](<./screenshots/Login Page.png>)
+![Local Image](./screenshots/Privatepage.png)
 
 ## Conclusion
 
