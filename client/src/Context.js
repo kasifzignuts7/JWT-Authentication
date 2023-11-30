@@ -7,7 +7,7 @@ export const UserContext = createContext({});
 export function UserContextProvider({ children }) {
   const [user, setUser] = useState(null);
 
-  //it will check for user on every render, if not it is not found it will try to get from server
+  //it will check for user on every render, if it is not found it will try to get from server
   useEffect(() => {
     if (!user) {
       axios
@@ -16,7 +16,7 @@ export function UserContextProvider({ children }) {
           setUser(data.id);
         })
         .catch((err) => {
-          console.log("context error:", err);
+          console.log("Context error:", err);
         });
     }
   }, [user]);

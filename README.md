@@ -77,7 +77,7 @@ Visit `http://localhost:3000` in your browser to interact with the JWT authentic
 
 - This is a snapshot gives us broad picture of how authentication works in action.
 
-![Local Image](<./screenshots/Authentication%20Cycle%20(2).png>)
+![Local Image](./screenshots/Authentication%20Cycle.png)
 
 #### Homepage:
 

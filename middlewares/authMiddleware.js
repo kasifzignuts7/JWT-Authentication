@@ -16,7 +16,7 @@ const authMiddleware = (req, res) => {
 
           if (user) {
             // user found
-            return res.json({ id: user._id });
+            return res.json({ error: false, id: user._id, message: "success" });
           } else {
             // user not found
             return res.json({
@@ -29,7 +29,7 @@ const authMiddleware = (req, res) => {
       });
     } else {
       // no token found
-      return res.json({ id: null, message: "no token found" });
+      return res.json({ error: true, id: null, message: "no token found" });
     }
   } catch (error) {
     console.log("Auth middleware error:", error);

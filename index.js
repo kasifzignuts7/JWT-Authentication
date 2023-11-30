@@ -9,9 +9,11 @@ const userRoute = require("./routes/userRoute");
 const PORT = 5000;
 const databaseURL = "mongodb://127.0.0.1:27017/JWTAuth";
 
-//Some necessary express configuration
+//Some necessary express middlewares configuration
 app.use(express.json());
 app.use(cookieParser());
+
+//Putting react app url in white list
 app.use(
   cors({
     origin: ["http://localhost:3000"],
