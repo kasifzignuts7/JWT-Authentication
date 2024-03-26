@@ -7,17 +7,23 @@ export const UserContext = createContext({});
 export function UserContextProvider({ children }) {
   const [user, setUser] = useState(null);
 
-  //it will check for user on every render, if it is not found it will try to get from server
+  // it will check for user on every render, if it is not found it will try to get from server
   useEffect(() => {
     if (!user) {
-      axios
-        .get("/profile")
-        .then(({ data }) => {
-          setUser(data.id);
-        })
-        .catch((err) => {
-          console.log("Context error:", err);
-        });
+      const userData = localStorage.getItem("user");
+
+      if (!userData) {
+        axios
+          .get("/profile")
+          .then(({ data }) => {
+            setUser(data.id);
+          })
+          .catch((err) => {
+            console.log("Context error:", err);
+          });
+      } else {
+        setUser(userData);
+      }
     }
   }, [user]);
 

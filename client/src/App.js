@@ -1,28 +1,41 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePage from "./pages/Homepage";
+import PrivatePage from "./pages/Privatepage";
+import Navbar from "./components/Navbar";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import axios from "axios";
-import Homepage from "./pages/Authentication";
-import Private from "./pages/Private";
 import UserContextProvider from "./Context";
 
+// basic axios configurations
 axios.defaults.baseURL = "http://localhost:5000";
 axios.defaults.withCredentials = true;
 
-const router = createBrowserRouter([
+// app layout
+const AppLayout = () => {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+    </>
+  );
+};
+
+// router configuration
+const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <Homepage />,
-  },
-  {
-    path: "/private",
-    element: <Private />,
+    element: <AppLayout />,
+    children: [
+      { path: "/", element: <HomePage /> },
+      { path: "/private", element: <PrivatePage /> },
+    ],
   },
 ]);
 
 function App() {
   return (
     <UserContextProvider>
-      <div className="bg-[#16202d] h-screen">
-        <RouterProvider router={router} />
+      <div className="bg-[#16202d] min-h-screen">
+        <RouterProvider router={appRouter} />
       </div>
     </UserContextProvider>
   );

@@ -1,22 +1,22 @@
 const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
 
-//JWT sign token function
+// JWT sign token function
 const createToken = (id) => {
   return jwt.sign({ id }, "MyStrongSecretKey", {
     expiresIn: "1d",
   });
 };
 
-// Controller for authentication
+// controller for authentication
 const auth = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    //try to login
+    // try to login
     const foundUser = await User.login(email, password);
 
-    //if credentials found ok, then reponse with jwt
+    // if credentials found ok, then reponse with jwt
     if (foundUser) {
       const jwtToken = createToken(foundUser._id);
       return res
@@ -48,14 +48,14 @@ const auth = async (req, res) => {
         });
     }
   } catch (err) {
-    return res.json({ error: true, message: err.message });
+    return res.status(200).json({ error: true, message: err.message });
   }
 };
 
-// Controller for logging out
+// controller for logging out
 const logout = (req, res) => {
-  //clear the cookie
-  return res.clearCookie("jwt").json({
+  // clear the cookie
+  return res.clearCookie("jwt").status(200).json({
     message: "success",
   });
 };

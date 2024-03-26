@@ -22,7 +22,7 @@ app.use(
   })
 );
 
-//Database base connection, using IIFE
+//Database connection, using IIFE
 (async () => {
   try {
     await mongoose.connect(databaseURL);

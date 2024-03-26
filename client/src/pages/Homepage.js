@@ -1,10 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import { UserContext } from "../Context";
 import axios from "axios";
 
-const Authentication = () => {
+const HomePage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { user, setUser } = useContext(UserContext);
@@ -18,7 +17,7 @@ const Authentication = () => {
   }, [user, navigate]);
 
   // auth handler
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
 
     axios
@@ -26,6 +25,7 @@ const Authentication = () => {
       .then(({ data }) => {
         if (!data.error) {
           setUser(data.id);
+          localStorage.setItem("user", data.id);
           navigate("/private");
         } else {
           alert(data.message);
@@ -38,7 +38,6 @@ const Authentication = () => {
 
   return (
     <>
-      <Navbar />
       <div className="flex gap-2 items-center flex-col text-white mt-36">
         <h1 className="text-4xl text-center mb-4">Authentication</h1>
         <form className="w-72" onSubmit={handleSubmit}>
@@ -86,4 +85,4 @@ const Authentication = () => {
   );
 };
 
-export default Authentication;
+export default HomePage;

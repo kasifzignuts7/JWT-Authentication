@@ -8,8 +8,8 @@ const userSchema = mongoose.Schema({
 });
 
 // hash the password before creating new user
-userSchema.pre("save", function (next) {
-  const salt = bcrypt.genSalt();
+userSchema.pre("save", async function (next) {
+  const salt = await bcrypt.genSalt();
   this.password = bcrypt.hashSync(this.password, salt);
   next();
 });

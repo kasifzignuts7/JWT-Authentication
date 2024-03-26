@@ -10,8 +10,9 @@ const Navbar = () => {
   // logout handler
   async function handleLogout() {
     await axios.get("/logout", { withCredentials: true }).then(() => {
-      //set user to null and navigate to home
+      // set user to null, remove from localStorage and navigate to home
       setUser(null);
+      localStorage.removeItem("user");
       navigate("/");
     });
   }
