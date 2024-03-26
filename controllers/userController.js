@@ -20,6 +20,7 @@ const auth = async (req, res) => {
     if (foundUser) {
       const jwtToken = createToken(foundUser._id);
       return res
+        .status(200)
         .cookie("jwt", jwtToken, {
           maxAge: 1000 * 60 * 60 * 24,
           httpOnly: true,
@@ -36,6 +37,7 @@ const auth = async (req, res) => {
 
       const jwtToken = createToken(newUser._id);
       return res
+        .status(200)
         .cookie("jwt", jwtToken, {
           maxAge: 1000 * 60 * 60 * 24,
           httpOnly: true,
