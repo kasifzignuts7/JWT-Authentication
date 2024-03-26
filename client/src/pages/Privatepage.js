@@ -14,11 +14,9 @@ const PrivatePage = () => {
   }, [user, navigate]);
 
   return (
-    <>
-      <div className="flex items-center justify-center mt-48 text-center">
-        <h3 className="text-white text-4xl">Welcome to Private Page!</h3>
-      </div>
-    </>
+    <div className="flex items-center justify-center mt-48 text-center">
+      <h3 className="text-white text-4xl">Welcome to Private Page!</h3>
+    </div>
   );
 };
 
