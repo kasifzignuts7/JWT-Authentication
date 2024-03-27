@@ -1,10 +1,10 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
 
-const authMiddleware = (req, res) => {
-  const token = req.cookies["jwt"];
+const authMiddleware = (req, res, next) => {
+  const token = req?.headers?.authorization.split(" ")[1];
+
   try {
-    // check for token in cookie
     if (token) {
       jwt.verify(token, "MyStrongSecretKey", async (err, decodedToken) => {
         // error in verifying token
@@ -16,19 +16,16 @@ const authMiddleware = (req, res) => {
           // find the user with decoded token's id
           const user = await User.findById(decodedToken.id);
 
-          if (user) {
-            // user found
-            return res
-              .status(200)
-              .json({ error: false, id: user._id, message: "success" });
-          } else {
-            // user not found
+          // user not found
+          if (!user) {
             return res.status(401).json({
               error: true,
               id: null,
               message: "invalid token",
             });
           }
+          req.user = user;
+          next();
         }
       });
     } else {

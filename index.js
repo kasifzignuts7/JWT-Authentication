@@ -1,19 +1,17 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const userRoute = require("./routes/userRoute");
+const routes = require("./routes/routes");
 
-//Constants
+// constants
 const PORT = 5000;
 const databaseURL = "mongodb://127.0.0.1:27017/JWTAuth";
 
-//Some necessary express middlewares configuration
+// some necessary express middlewares configuration
 app.use(express.json());
-app.use(cookieParser());
 
-//Putting react app url in white list
+// putting react app url in white list
 app.use(
   cors({
     origin: "http://localhost:3000",
@@ -22,7 +20,7 @@ app.use(
   })
 );
 
-//Database connection, using IIFE
+// database connection, using IIFE
 (async () => {
   try {
     await mongoose.connect(databaseURL);
@@ -33,5 +31,5 @@ app.use(
   }
 })();
 
-//User routes
-app.use("/", userRoute);
+// user routes
+app.use("/", routes);

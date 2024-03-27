@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { UserContext } from "../Context";
 import { useNavigate } from "react-router-dom";
 
@@ -8,13 +7,10 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   // logout handler
-  async function handleLogout() {
-    await axios.get("/logout", { withCredentials: true }).then(() => {
-      // set user to null, remove from localStorage and navigate to home
-      setUser(null);
-      localStorage.removeItem("user");
-      navigate("/");
-    });
+  function handleLogout() {
+    setUser(null);
+    localStorage.removeItem("user");
+    navigate("/");
   }
 
   return (

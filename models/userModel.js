@@ -16,19 +16,18 @@ userSchema.pre("save", async function (next) {
 
 // static login function
 userSchema.statics.login = async function (email, password) {
-  // find the user in db
   const user = await this.findOne({ email });
 
+  // check for password
   if (user) {
-    // check for password
-    const auth = await bcrypt.compareSync(password, user.password);
+    const auth = bcrypt.compareSync(password, user.password);
     // if password matches, return the user to controller
     if (auth) {
       return user;
     }
 
     // user found but password didn't matched
-    throw Error("Incorrect password!");
+    throw new Error("Incorrect password!");
   }
 };
 
