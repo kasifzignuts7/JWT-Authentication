@@ -29,14 +29,7 @@ git clone https://github.com/kasifzignuts7/JWT-Authentication
 Navigate to the project directory and install the required dependencies:
 
 ```bash
-npm install
-```
-
-This will generate a "node_modules" folder in your root directory.
-
-```bash
-cd client
-npm install
+npm run build
 ```
 
 ## Configuration
@@ -52,12 +45,13 @@ After configuring the application, run the following command:
 For server:
 
 ```bash
-nodemon index.js
+npm start
 ```
 
 For client:
 
 ```bash
+cd client
 npm start
 ```
 
@@ -67,9 +61,9 @@ Visit `http://localhost:3000` in your browser to interact with the JWT authentic
 
 1. Click on the submit button to authenticate.
 2. Once authenticated, you will be redirected to the private page.
-3. Open the developer tools in your browser and navigate to Application -> Storage -> Cookies to view the JWT token.
+3. Open the developer tools in your browser and navigate to Application -> Storage -> localstorage to view the logged in user data.
 4. Even after closing the tab or browser, you'll remain logged in, demonstrating the token's persistence.
-5. To logout, click on the logout button. This will clear the JWT token from your cookie and redirect you to the homepage.
+5. To logout, click on the logout button. This will clear the JWT token from the localstorage and redirect you to the homepage.
 
 ### Screenshots
 
